@@ -1,26 +1,70 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+let defaultStyle = {
+  color: "#fff"
+
 }
 
-export default App;
+
+class Filter extends Component {
+  render() {
+    return (
+      <div style={{ defaultStyle }}>
+        <img  />
+        <input type="text" />
+      </div>
+    )
+  }
+}
+
+class Playlist extends Component {
+  render() {
+    return (
+      <div style={{ ...defaultStyle, width: '25%', display: 'inline-block'}}>
+        <img />
+        <h3>Playlist Name Yup</h3>
+        <ul>
+          <li>
+            Song 1
+            </li>
+          <li>
+            Song 2
+            </li>
+          <li>
+            Song 3
+            </li>
+        </ul>
+      </div>
+    )
+  }
+}
+
+class Aggregate extends Component {
+  render() {
+    return (
+      <div style={{ defaultStyle, width: '40%', color: '#ccc', display: "inline-block" }}>
+        <h2>
+          Number Text
+        </h2>
+      </div>
+    )
+  }
+}
+
+export default class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1 style={{ color: '#fff' }}>Title</h1>
+        <Aggregate />
+        <Aggregate />
+        <Filter />
+        <Playlist />
+        <Playlist />
+        <Playlist />
+        <Playlist />
+      </div>
+    )
+  }
+}
